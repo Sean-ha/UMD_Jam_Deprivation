@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool isInteracting = false;
+
     private float movementSpeed = 5f;
     private float horizontalInput;
     private float verticalInput;
@@ -19,8 +21,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
+        if(!isInteracting)
+        {
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+        }
+        else
+        {
+            horizontalInput = 0;
+            verticalInput = 0;
+        }
 
         animator.SetFloat("HorizontalSpeed", horizontalInput);
         animator.SetFloat("VerticalSpeed", verticalInput);
@@ -39,5 +49,12 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rigidBody.velocity = new Vector2(horizontalInput * movementSpeed, verticalInput * movementSpeed);
+    }
+
+    // Called when player begins interactions
+    public void SetInteracting()
+    {
+        rigidBody.velocity = new Vector2(0, 0);
+        isInteracting = true;
     }
 }
