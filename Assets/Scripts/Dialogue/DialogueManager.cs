@@ -42,6 +42,9 @@ public class DialogueManager : MonoBehaviour
 
     private void Awake()
     {
+        // TEMPORARY CODE FOR DEBUGGING
+        AdvanceDialogue.dialogueTracker = new int[20];
+
         instance = this;
         dialogueText = dialoguePanel.transform.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         placeholderText = dialoguePanel.transform.Find("PlaceholderText").GetComponent<TextMeshProUGUI>();
@@ -295,7 +298,7 @@ public class DialogueManager : MonoBehaviour
     IEnumerator PauseTyping()
     {
         isPaused = true;
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.25f);
         isPaused = false;
     }
 

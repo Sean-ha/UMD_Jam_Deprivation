@@ -31,25 +31,35 @@ public class DialoguePanel : MonoBehaviour
 
     private void OnEnable()
     {
-        LeanTween.alpha(dialoguePanelRT, 1, 0.6f);
-        LeanTween.alpha(dialogueSpriteRT, 1, 0.6f).setOnComplete(PrintDialogue);
-        dialogueSpriteRT.gameObject.SetActive(true);
+        LeanTween.alpha(dialoguePanelRT, 1, 0);
+        LeanTween.alpha(dialogueSpriteRT, 1, 0).setOnComplete(PrintDialogue);
     }
 
     private void PrintDialogue()
     {
+        dialogueSpriteRT.gameObject.SetActive(true);
         interactBox.canSkip = true;
         dialogueManager.PrintDialogue();
     }
 
     public void CloseDialogue()
     {
-        interactBox.canSkip = false;
-        LeanTween.alpha(dialoguePanelRT, 0, 0.6f);
-        LeanTween.value(dialogueText.gameObject, a => dialogueText.color = a,
-            new Color(0, 0, 0, 1), new Color(0, 0, 0, 0), 0.6f);
-        LeanTween.alpha(dialogueSpriteRT, 0, 0.6f).setOnComplete(DisablePanel);
         dialogueSpriteRT.GetComponent<Animator>().Play("DialogueSpriteExit");
+        StartCoroutine(CloseAll());
+    }
+
+    private void CloseEverything()
+    {
+        interactBox.canSkip = false;
+        LeanTween.alpha(dialoguePanelRT, 0, 0.3f);
+        LeanTween.value(dialogueText.gameObject, a => dialogueText.color = a,
+            new Color(0, 0, 0, 1), new Color(0, 0, 0, 0), 0.3f).setOnComplete(DisablePanel);
+    }
+
+    private IEnumerator CloseAll()
+    {
+        yield return new WaitForSeconds(0.5f);
+        CloseEverything();
     }
 
     private void DisablePanel()

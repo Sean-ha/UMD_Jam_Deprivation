@@ -15,10 +15,10 @@ MonoBehaviour:
   dialogue:
   - $$0 What is up dude?? YOOOOOOOO Long text here long text hahahahahah funny toilet
     man 9999 dude what the fffff
-  - '##1 What is up dude?? YOOOOOOOO Long text here long text hahahahahah funny toilet
-    man 9999 dude what the fffff'
-  - $$0 What is up dude?? YOOOOOOOO Long text here long text hahahahahah funny toilet
+  - $$1 What is up dude?? YOOOOOOOO Long text here long text hahahahahah funny toilet
     man 9999 dude what the fffff
+  - '##0 What is up dude?? YOOOOOOOO Long text here long text hahahahahah funny toilet
+    man 9999 dude what the fffff'
   responseOptions: []
   id: 0
   goToNextDialogue: 0

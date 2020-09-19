@@ -32,6 +32,15 @@ public class PlayerMovement : MonoBehaviour
             verticalInput = 0;
         }
 
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            movementSpeed = 25;
+        }
+        if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            movementSpeed = 5;
+        }
+
         animator.SetFloat("HorizontalSpeed", horizontalInput);
         animator.SetFloat("VerticalSpeed", verticalInput);
         if(horizontalInput != 0) 

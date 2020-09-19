@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2553203280435079315}
   - component: {fileID: 2553203280435079317}
   - component: {fileID: 2553203280435079316}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,8 +86,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1731809837
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2273262987894464175, guid: 0352d1fb0f7b76d4dbc1b8a986ecf573, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2553203281085225455}
   - component: {fileID: 2553203281085225454}
   - component: {fileID: 2553203281085225457}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: InteractBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3d253a7a4b12c419c12cec09b3849d, type: 3}
+  m_Name: Dresser1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - $$3...!
+  - 'Theyre.@.@.@ missing... '
+  - $$6I swear I put them here yesterday@.@.@. Please let this be another dream...
+  - Without my lucky socks.@.@.@ I@.@.@. I@.@.@.@
+  - $$1No. @I'm going to find them. @Even if it's the last thing I do.
+  - I need to believe in myself. @I can do this.
+  - Maybe the others in town might know something about my missing socks. @I'll go
+    ask them.
+  responseOptions: []
+  id: 0
+  goToNextDialogue: 1

@@ -18,12 +18,18 @@ public class DialogueTrigger : MonoBehaviour
         dialogueManager = DialogueManager.instance;
         npcSprites = Resources.LoadAll<Sprite>("CharacterPortraits/" + npcName);
 
-        // currentArrayCounter = AdvanceDialogue.dialogueTracker[npcID];
+        if(npcID != 0)
+        {
+            currentArrayCounter = AdvanceDialogue.dialogueTracker[npcID];
+        }
     }
 
     public void ActivateTrigger()
     {
-        // currentArrayCounter = AdvanceDialogue.SetDialogue(npcID, currentArrayCounter);
+        if(npcID != 0)
+        {
+            currentArrayCounter = AdvanceDialogue.SetDialogue(npcID, currentArrayCounter);
+        }
 
         dialogueManager.StartDialogue(dialogueList[currentArrayCounter].dialogue,
             dialogueList[currentArrayCounter].responseOptions, npcSprites, dialogueList[currentArrayCounter].id);
