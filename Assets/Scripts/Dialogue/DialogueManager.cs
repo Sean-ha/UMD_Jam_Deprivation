@@ -35,6 +35,8 @@ public class DialogueManager : MonoBehaviour
     private int trueTracker;
     private int dialogueArrayTracker;
 
+    private int dialogueID;
+
     private List<int> charsToShake;
 
     private Responses[] responses;
@@ -176,6 +178,7 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
 
+        dialogueID = id;
         dialogues = dialogue;
         responses = response;
         currentSprites = npcSprites;
@@ -257,6 +260,12 @@ public class DialogueManager : MonoBehaviour
         displayingText = false;
 
         dialoguePanel.GetComponent<DialoguePanel>().CloseDialogue();
+
+        // Opening cutscene ending
+        if(dialogueID == 1)
+        {
+            FindObjectOfType<Opening>().FadeAway();
+        }
     }
 
     // Called when the player presses 'C'. Advances the current dialogue to the end.

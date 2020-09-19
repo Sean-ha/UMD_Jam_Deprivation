@@ -20,7 +20,7 @@ public class DialogueTrigger : MonoBehaviour
 
         if(npcID != 0)
         {
-            currentArrayCounter = AdvanceDialogue.dialogueTracker[npcID];
+            currentArrayCounter = AdvanceDialogue.dialogueTracker[npcID - 1];
         }
     }
 
@@ -33,9 +33,14 @@ public class DialogueTrigger : MonoBehaviour
 
         dialogueManager.StartDialogue(dialogueList[currentArrayCounter].dialogue,
             dialogueList[currentArrayCounter].responseOptions, npcSprites, dialogueList[currentArrayCounter].id);
+
         if (dialogueList[currentArrayCounter].goToNextDialogue)
         {
             currentArrayCounter++;
+            if(npcID != 0)
+            {
+                AdvanceDialogue.SetDialogue(npcID, currentArrayCounter);
+            }
         }
     }
 }

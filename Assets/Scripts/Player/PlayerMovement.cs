@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [HideInInspector]
     public bool isInteracting = false;
+    [HideInInspector]
+    public float horizontalInput;
+    [HideInInspector]
+    public float verticalInput;
 
     private float movementSpeed = 5f;
-    private float horizontalInput;
-    private float verticalInput;
 
     private Rigidbody2D rigidBody;
     private Animator animator;
 
-    void Start()
+    void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
@@ -25,11 +28,6 @@ public class PlayerMovement : MonoBehaviour
         {
             horizontalInput = Input.GetAxisRaw("Horizontal");
             verticalInput = Input.GetAxisRaw("Vertical");
-        }
-        else
-        {
-            horizontalInput = 0;
-            verticalInput = 0;
         }
 
         if(Input.GetKeyDown(KeyCode.LeftShift))
@@ -64,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
     public void SetInteracting()
     {
         rigidBody.velocity = new Vector2(0, 0);
-        isInteracting = true;
+        isInteracting = true; 
+        horizontalInput = 0;
+        verticalInput = 0;
     }
 }

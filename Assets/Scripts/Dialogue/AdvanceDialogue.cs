@@ -19,6 +19,10 @@ public class AdvanceDialogue
 
     private static int Dresser(int npcID, int currentDialogue)
     {
+        if(currentDialogue == 0)
+        {
+            PlayerStats.investigatedDresser = true;
+        }
         dialogueTracker[npcID - 1] = currentDialogue;
         return currentDialogue;
     }

@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RuiBedroom.unity
     guid: 8e373d98c7e8b10458de828ed5cec59f
+  - enabled: 1
+    path: Assets/Scenes/RuiKitchen.unity
+    guid: f73d6524cbd7aaf44b097c3c5b692165
   m_configObjects: {}
