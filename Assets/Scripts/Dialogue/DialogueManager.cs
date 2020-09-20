@@ -19,6 +19,10 @@ public class DialogueManager : MonoBehaviour
     private Sprite[] currentSprites;
     private Sprite[] playerSprites;
 
+    private AudioClip playerAudio;
+    private AudioClip npcAudio;
+    private AudioSource audioSource;
+
     private bool displayingText;
     private bool isPaused;
     public static bool readyForNextDialogue;
@@ -48,10 +52,12 @@ public class DialogueManager : MonoBehaviour
         AdvanceDialogue.dialogueTracker = new int[20];
 
         instance = this;
+        audioSource = GetComponent<AudioSource>();
         dialogueText = dialoguePanel.transform.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         placeholderText = dialoguePanel.transform.Find("PlaceholderText").GetComponent<TextMeshProUGUI>();
         dialogueSprite = dialoguePanel.transform.parent.Find("DialogueSprite").GetComponent<Image>();
         playerSprites = Resources.LoadAll<Sprite>("CharacterPortraits/Player");
+        playerAudio = Resources.Load<AudioClip>("PlayerSound");
     }
 
     private void Update()
@@ -103,6 +109,10 @@ public class DialogueManager : MonoBehaviour
                 dialogueText.text += textTrue[trueTracker];
                 formattedTracker++;
                 trueTracker++;
+                if(!audioSource.isPlaying)
+                {
+                    audioSource.Play();
+                }
             }
         }
         // Text shaking
@@ -174,7 +184,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     // Sets up dialogue and UI, gets ready to print.
-    public void StartDialogue(string[] dialogue, Responses[] response, Sprite[] npcSprites, int id)
+    public void StartDialogue(string[] dialogue, Responses[] response, Sprite[] npcSprites, int id, AudioClip typeSound)
     {
         dialoguePanel.SetActive(true);
 
@@ -182,6 +192,7 @@ public class DialogueManager : MonoBehaviour
         dialogues = dialogue;
         responses = response;
         currentSprites = npcSprites;
+        npcAudio = typeSound;
 
         PrepareDialogue();
     }
@@ -209,6 +220,7 @@ public class DialogueManager : MonoBehaviour
                 int index = System.Int32.Parse(textTrue[2].ToString());
                 dialogueSprite.sprite = currentSprites[index];
                 dialogueSprite.SetNativeSize();
+                audioSource.clip = npcAudio;
 
                 if(isOnPlayerSprite) 
                 {
@@ -224,6 +236,8 @@ public class DialogueManager : MonoBehaviour
                 int index = System.Int32.Parse(textTrue[2].ToString());
                 dialogueSprite.sprite = playerSprites[index];
                 dialogueSprite.SetNativeSize();
+                audioSource.clip = playerAudio;
+
                 if(!isOnPlayerSprite) 
                 {
                     isOnPlayerSprite = true;

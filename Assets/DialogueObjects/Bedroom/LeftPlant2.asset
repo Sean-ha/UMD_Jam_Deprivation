@@ -16,4 +16,4 @@ MonoBehaviour:
   - $$1There's nothing here.
   responseOptions: []
   id: 0
-  goToNextDialogue: 1
+  goToNextDialogue: 0

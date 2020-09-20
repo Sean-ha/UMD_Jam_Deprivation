@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Picture2
   m_EditorClassIdentifier: 
   dialogue:
-  - $$1Maybe my drawing skills haven't improved at all...
+  - $$7Maybe my drawing skills haven't improved at all...
   responseOptions: []
   id: 0
-  goToNextDialogue: 1
+  goToNextDialogue: 0

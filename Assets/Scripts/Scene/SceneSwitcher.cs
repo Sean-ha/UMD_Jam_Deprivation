@@ -14,25 +14,30 @@ public class SceneSwitcher : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            switch (id)
-            {
-                case 1:
-                    if (!PlayerStats.investigatedDresser)
-                    {
-                        PlayerMovement playerMovement = collision.GetComponent<PlayerMovement>();
-                        playerMovement.SetInteracting();
-                        StartCoroutine(WalkRight(playerMovement));
-                        GetComponent<DialogueTrigger>().ActivateTrigger();
-                        return;
-                    }
-                    break;
-            }
-
-            collision.GetComponent<PlayerMovement>().SetInteracting();
-            SceneLoad.instance.SetPosition(playerPosition);
-            SceneLoad.instance.SetDirection(directionToFace);
-            FadeToBlack.instance.FadeIntoBlack(LoadScene);
+            EnterScene();
         }
+    }
+
+    public void EnterScene()
+    {
+        switch (id)
+        {
+            case 1:
+                if (!PlayerStats.investigatedDresser)
+                {
+                    PlayerMovement playerMovement = FindObjectOfType<PlayerMovement>();
+                    playerMovement.SetInteracting();
+                    StartCoroutine(WalkRight(playerMovement));
+                    GetComponent<DialogueTrigger>().ActivateTrigger();
+                    return;
+                }
+                break;
+        }
+
+        FindObjectOfType<PlayerMovement>().SetInteracting();
+        SceneLoad.instance.SetPosition(playerPosition);
+        SceneLoad.instance.SetDirection(directionToFace);
+        FadeToBlack.instance.FadeIntoBlack(LoadScene);
     }
 
     private IEnumerator WalkRight(PlayerMovement playerMovement)

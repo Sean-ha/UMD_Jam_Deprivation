@@ -8,6 +8,7 @@ public class DialogueTrigger : MonoBehaviour
     public DialogueObject[] dialogueList;
     public string npcName;
     public int npcID;
+    public AudioClip typeSound;
 
     private DialogueManager dialogueManager;
     private int currentArrayCounter;
@@ -15,6 +16,10 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
+        if(typeSound == null)
+        {
+            typeSound = Resources.Load<AudioClip>("PlayerSound");
+        }
         dialogueManager = DialogueManager.instance;
         npcSprites = Resources.LoadAll<Sprite>("CharacterPortraits/" + npcName);
 
@@ -32,7 +37,8 @@ public class DialogueTrigger : MonoBehaviour
         }
 
         dialogueManager.StartDialogue(dialogueList[currentArrayCounter].dialogue,
-            dialogueList[currentArrayCounter].responseOptions, npcSprites, dialogueList[currentArrayCounter].id);
+            dialogueList[currentArrayCounter].responseOptions, npcSprites, dialogueList[currentArrayCounter].id,
+            typeSound);
 
         if (dialogueList[currentArrayCounter].goToNextDialogue)
         {

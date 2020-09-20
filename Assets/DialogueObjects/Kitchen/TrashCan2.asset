@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TrashCan2
   m_EditorClassIdentifier: 
   dialogue:
-  - $$7I'm not going to rummage around the trash can.
+  - $$7I'm not going to rummage through the trash can.
   responseOptions: []
   id: 0
   goToNextDialogue: 0

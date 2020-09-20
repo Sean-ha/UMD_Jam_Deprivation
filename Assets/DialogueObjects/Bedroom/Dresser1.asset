@@ -14,13 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - $$3...!
-  - 'Theyre.@.@.@ missing... '
-  - $$6I swear I put them here yesterday@.@.@. Please let this be another dream...
+  - 'They''re.@.@.@ missing... '
+  - $$6I swear I put them here yesterday@.@.@.
+  - Please let this be another dream@.@.@.
+  - If it's not, then@.@.@.
   - Without my lucky socks.@.@.@ I@.@.@. I@.@.@.@
-  - $$1No. @I'm going to find them. @Even if it's the last thing I do.
+  - .@.@.@
+  - $$1No.
+  - $$1I'm going to find them. @Even if it's the last thing I do.
   - I need to believe in myself. @I can do this.
-  - Maybe the others in town might know something about my missing socks. @I'll go
-    ask them.
+  - For starters, maybe the others in town might know something about my missing
+    socks. @I'll go ask them.
   responseOptions: []
   id: 0
   goToNextDialogue: 1

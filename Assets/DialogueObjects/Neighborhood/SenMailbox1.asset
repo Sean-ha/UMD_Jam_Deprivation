@@ -10,15 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a3d253a7a4b12c419c12cec09b3849d, type: 3}
-  m_Name: TestText
+  m_Name: SenMailbox1
   m_EditorClassIdentifier: 
   dialogue:
-  - $$0 What is up dude?? YOOOOOOOO Long text here long text hahahahahah funny toilet
-    man 9999 dude what the fffff
-  - $$1 What is up dude?? YOOOOOOOO Long text here long text hahahahahah funny toilet
-    man 9999 dude what the fffff
-  - '##0 What is up dude?? YOOOOOOOO Long text here long text hahahahahah funny toilet
-    man 9999 dude what the fffff'
+  - $$1Sen's mailbox. It's pretty cute.
   responseOptions: []
   id: 0
-  goToNextDialogue: 0
+  goToNextDialogue: 1

@@ -23,7 +23,7 @@ public class Opening : MonoBehaviour
 
     private IEnumerator OpeningCutScene()
     {
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(3f);
         GetComponent<DialogueTrigger>().ActivateTrigger();
     }
 
@@ -38,7 +38,7 @@ public class Opening : MonoBehaviour
         playerMovement.SetInteracting();
         yield return new WaitForSeconds(1f);
         playerMovement.SetInteracting();
-        LeanTween.color(gameObject, new Color(0, 0, 0, 0), 2f).setOnComplete(AwakeDialogue);
+        LeanTween.color(gameObject, new Color(0, 0, 0, 0), 6f).setOnComplete(AwakeDialogue);
     }
 
     private void AwakeDialogue()

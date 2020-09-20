@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogue:
   - $$1It's a picture I drew a week ago.
   - ...
-  - It looks exactly the same as the one upstairs.
+  - $$7It looks exactly the same as the one upstairs.
   responseOptions: []
   id: 0
   goToNextDialogue: 1

@@ -9,6 +9,7 @@ public class InteractBox : MonoBehaviour
     private bool canInteract;
 
     private GameObject collisionDialogue;
+    private GameObject interactableObject;
 
     private PlayerMovement playerMovement;
     private DialogueManager dialogueManager;
@@ -30,6 +31,11 @@ public class InteractBox : MonoBehaviour
                     playerMovement.SetInteracting();
                     collisionDialogue.GetComponent<DialogueTrigger>().ActivateTrigger();
                 }
+                else if(interactableObject != null)
+                {
+                    playerMovement.SetInteracting();
+                    interactableObject.GetComponent<Interactable>().Interact();
+                }
             }
             else if (playerMovement.isInteracting && canSkip)
             {
@@ -48,6 +54,11 @@ public class InteractBox : MonoBehaviour
             canInteract = true;
             collisionDialogue = collision.gameObject;
         }
+        else if(collision.CompareTag("Interactable"))
+        {
+            canInteract = true;
+            interactableObject = collision.gameObject;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -56,6 +67,11 @@ public class InteractBox : MonoBehaviour
         {
             canInteract = false;
             collisionDialogue = null;
+        }
+        else if(collision.CompareTag("Interactable"))
+        {
+            canInteract = false;
+            interactableObject = null;
         }
     }
 }

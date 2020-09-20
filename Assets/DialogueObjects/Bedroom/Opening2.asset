@@ -14,8 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - $$1.@.@.@ Ah.
-  - It was all just a dream...?
-  - They're.@.@.@ missing.@.@.@?
+  - It was.@.@.@ just a dream.@.@.@?
+  - What a terrible nightmare.
+  - Well whatever. @I'm glad it's over now.
+  - .@.@.@
+  - Just to be sure, I should check that I still have my lucky socks.
+  - They should be inside that dresser over there.
   responseOptions: []
   id: 0
   goToNextDialogue: 0

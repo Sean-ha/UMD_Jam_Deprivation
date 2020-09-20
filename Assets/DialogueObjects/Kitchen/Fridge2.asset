@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Fridge2
   m_EditorClassIdentifier: 
   dialogue:
-  - $$7Checking it won't make more food appear.
+  - $$7Checking it again won't make more food appear.
   responseOptions: []
   id: 0
   goToNextDialogue: 0
