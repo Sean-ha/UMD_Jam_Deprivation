@@ -278,6 +278,7 @@ public class DialogueManager : MonoBehaviour
         // Opening cutscene ending
         if(dialogueID == 1)
         {
+            PlayerStats.playedOpeningCutscene = true;
             FindObjectOfType<Opening>().FadeAway();
         }
     }
