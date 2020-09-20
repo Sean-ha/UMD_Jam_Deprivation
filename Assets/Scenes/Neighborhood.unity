@@ -23492,6 +23492,7 @@ MonoBehaviour:
   dialogueList:
   - {fileID: 11400000, guid: 909bf41ad3d270e46a5f7a03d9bae484, type: 2}
   - {fileID: 11400000, guid: 18e99bd188a7e184db0fa5ae6ac17ebd, type: 2}
+  - {fileID: 11400000, guid: 382fcf29df4229c4f96c4a698cb4f665, type: 2}
   npcName: Sen
   npcID: 3
   typeSound: {fileID: 8300000, guid: a92184a639ca31c438752826f6a1d150, type: 3}
