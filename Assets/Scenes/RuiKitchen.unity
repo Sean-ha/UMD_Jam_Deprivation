@@ -6842,6 +6842,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8223024051197391728, guid: 6f692aecbf0d51e40b5990e256881a6e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8223024051197391732, guid: 6f692aecbf0d51e40b5990e256881a6e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

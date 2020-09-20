@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Book2
   m_EditorClassIdentifier: 
   dialogue:
-  - $$1There's no reason to read this...
+  - $$1I'm not going to read this right now.
   responseOptions: []
   id: 0
   goToNextDialogue: 0

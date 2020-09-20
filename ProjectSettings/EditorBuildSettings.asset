@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Neighborhood.unity
     guid: 4b6f190a9d9a4d74ab847071d3e208f1
+  - enabled: 1
+    path: Assets/Scenes/UnderTheBed.unity
+    guid: 6eaf97a4ef8f0d04095b574ab97d29ed
   m_configObjects: {}

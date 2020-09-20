@@ -49,7 +49,7 @@ public class DialogueManager : MonoBehaviour
     private void Awake()
     {
         // TEMPORARY CODE FOR DEBUGGING
-        AdvanceDialogue.dialogueTracker = new int[20];
+        // AdvanceDialogue.dialogueTracker = new int[20];
 
         instance = this;
         audioSource = GetComponent<AudioSource>();
@@ -195,6 +195,18 @@ public class DialogueManager : MonoBehaviour
         npcAudio = typeSound;
 
         PrepareDialogue();
+
+        switch (id)
+        {
+            case 3:
+                // Talked to Bera. He tells you to look under your bed.
+                PlayerStats.beraDialogue1 = true;
+                break;
+            case 5:
+                // Opening2 starts. Start the BGM.
+                SingleInstance.instance.PlayMusic();
+                break;
+        }
     }
 
     // Gets the proper string to print by processing the tags included in the string and adding 
@@ -247,6 +259,16 @@ public class DialogueManager : MonoBehaviour
                 textTrue = textTrue.Remove(0, 3);
             }
         }
+        // Checks for playing sound
+        if(textTrue.Length >= 3)
+        {
+            string substr = textTrue.Substring(0, 3);
+            if (substr == "#*#")
+            {
+                SoundManager.PlaySound(SoundManager.Sound.BeraSFX);
+                textTrue = textTrue.Remove(0, 3);
+            }
+        }
         
         string formattedText = textTrue.Replace("@", "");
         formattedText = ProcessTags(formattedText, true);
@@ -275,12 +297,24 @@ public class DialogueManager : MonoBehaviour
 
         dialoguePanel.GetComponent<DialoguePanel>().CloseDialogue();
 
-        // Opening cutscene ending
-        if(dialogueID == 1)
+
+        switch(dialogueID)
         {
-            PlayerStats.playedOpeningCutscene = true;
-            FindObjectOfType<Opening>().FadeAway();
-        }
+            // Opening cutscene ending
+            case 1:
+                PlayerStats.playedOpeningCutscene = true;
+                FindObjectOfType<Opening>().FadeAway();
+                break;
+            case 2:
+                // Talked to Sen for the first time
+                PlayerStats.senDialogue1 = true;
+                break;
+            case 4:
+                // Go under the bed
+                PlayerStats.wentUnderBed = true;
+                GameObject.Find("Bed").GetComponent<SceneSwitcher>().EnterScene();
+                break;
+        }        
     }
 
     // Called when the player presses 'C'. Advances the current dialogue to the end.

@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
 {
     void Start()
     {
-        GetComponent<Interactable>().interact = GetComponent<SceneSwitcher>().EnterScene;
+        Interactable interactable = GetComponent<Interactable>();
+        interactable.interact = GetComponent<SceneSwitcher>().EnterScene;
     }
 }

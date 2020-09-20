@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Book1
   m_EditorClassIdentifier: 
   dialogue:
-  - $$1It's my journal. No point in reading it right now.
+  - $$1It's my journal.
+  - .@.@.
+  - There's some pretty embarassing stuff in here...
   responseOptions: []
   id: 0
   goToNextDialogue: 1

@@ -19,12 +19,14 @@ public class Credits : MonoBehaviour
 
     public void ShowCredits()
     {
+        SoundManager.PlaySound(SoundManager.Sound.Click);
         gameObject.SetActive(true);
         image.color = new Color(0, 0, 0, 1);
     }
 
     public void CloseCredits()
     {
+        SoundManager.PlaySound(SoundManager.Sound.Click);
         gameObject.SetActive(false);
         image.color = new Color(0, 0, 0, 0);
     }

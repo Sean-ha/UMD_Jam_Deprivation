@@ -9,6 +9,7 @@ public class StartGame : MonoBehaviour
     public void OnStartGameButtonClick()
     {
         AdvanceDialogue.dialogueTracker = new int[20];
+        SoundManager.PlaySound(SoundManager.Sound.Click);
         SceneManager.LoadScene("RuiBedroom");
     }
 }

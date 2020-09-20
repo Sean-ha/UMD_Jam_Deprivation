@@ -19,7 +19,8 @@ MonoBehaviour:
   - $$8Yeah! Those! Have you seen them?
   - '##1Nope.'
   - $$2.@.@.@
-  - '##0But maybe '
+  - '##0But maybe Bera might know what happened to them.'
+  - Why don't you try talking to him? He should be just across the street.
   responseOptions: []
-  id: 0
+  id: 2
   goToNextDialogue: 1

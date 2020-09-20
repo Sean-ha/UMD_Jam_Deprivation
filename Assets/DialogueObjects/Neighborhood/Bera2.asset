@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3d253a7a4b12c419c12cec09b3849d, type: 3}
+  m_Name: Bera2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - '##0.@.@.'
+  - $$1.@.@.
+  - '##0Stop.'
+  - $$4...?!
+  - '##0You.@.@. @are troubled.'
+  - Perhaps.@.@. @You lost something dear to you.
+  - And now you wish to find it once again.
+  - That something.@.@. @Could it be.@.@.@?
+  - '##1#*#<a>YOUR SOCKS!?</a>'
+  - $$3That's right! How did you know that?
+  - '##0Meditating allows one to see things that may otherwise appear.@.@. @invisible.'
+  - (I just overheard their conversation from across the street.)
+  - Let me provide you with this insight, young one.
+  - 'If you wish to find that which you hold dear,
+
+    Then you must confront your
+    deepest fears.'
+  - (I have no idea what I'm talking about.)
+  - What does this mean? Well, I believe it means you should search@.@.@.
+  - '##1#*#<a>UNDER YOUR BED!</a>'
+  - $$4.@.@.
+  - '##0Now leave me be, child. I have important matters to attend to. @I am quite
+    the busy man, I''ll have you know.'
+  responseOptions: []
+  id: 3
+  goToNextDialogue: 1

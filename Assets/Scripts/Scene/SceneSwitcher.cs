@@ -38,6 +38,7 @@ public class SceneSwitcher : MonoBehaviour
         SceneLoad.instance.SetPosition(playerPosition);
         SceneLoad.instance.SetDirection(directionToFace);
         FadeToBlack.instance.FadeIntoBlack(LoadScene);
+        SoundManager.PlaySound(SoundManager.Sound.Door);
     }
 
     private IEnumerator WalkRight(PlayerMovement playerMovement)
