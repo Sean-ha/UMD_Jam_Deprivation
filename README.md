@@ -1,2 +1,2 @@
 # UMD_Jam_Deprivation
- Game made for UMBC/UMD/AACC game jam 2020
+ Game made in 48 hours for UMBC/UMD/AACC game jam 2020.

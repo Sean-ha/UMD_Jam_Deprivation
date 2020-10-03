@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sen3
   m_EditorClassIdentifier: 
   dialogue:
-  - '##1Hey Rui. Good luck finding your socks.'
+  - '##0Hey Rui. Good luck finding your socks.'
   responseOptions: []
   id: 0
   goToNextDialogue: 0
